@@ -31,7 +31,7 @@ OpenSSH allows us to connect our computer to other computers.
 Open a terminal in VSC, and then type in "ssh" and your account:
 
 ```
-$ ssh cs15lfa22po@ieng6.ucsd.edu
+ssh cs15lfa22po@ieng6.ucsd.edu
 ```
 My personal account is: cs15lfa22po, which is different to yours.
 
@@ -53,8 +53,65 @@ Try run some commands in both **your computer** and the **remote computer**.
 * `ls <directory>`
 * `cp <directory>`
 * `cat <directory>`
+* `exit`
 
 This was what is shown when I ran `ls -lat`:
 ![image](lab-report-1-week-1-folder/runSomeCommands.png)
 
->Step 6: 
+>Step 6: Moveing files using SSH
+
+By using SSH, we can copy some files to the remote server:
+
+```
+scp <fileName> cs15lfa22po@ieng6.ucsd.edu:~/
+```
+
+We can create a file called `WhereAmI.java` to test it both one **our computer** and the **remote computer**. Inside `WhereAmI.java`:
+
+```
+class WhereAmI {
+  public static void main(String[] args) {
+    System.out.println(System.getProperty("os.name"));
+    System.out.println(System.getProperty("user.name"));
+    System.out.println(System.getProperty("user.home"));
+    System.out.println(System.getProperty("user.dir"));
+  }
+}
+```
+
+`WhereAmI.java` runs on my own laptop looks like this:
+![image](/lab-report-1-week-1-folder/WhereAmIRanOnPC.png)
+After copying the file to the remote, run it on the server:
+![image](/lab-report-1-week-1-folder/scpToRemote.png)
+>Step 7: SSH keys
+
+Each time we log in or `scp` a file or some files to the remote computer, we had to type in the password.  
+To eliminate this time consuming issue, we can use `ssh` keys.
+Now, type this on your own computer:
+```
+ssh-keygen
+```
+![image](/lab-report-1-week-1-folder/generateSSHkey.png)
+This command generate two keys, a private key `id_rsa` and a public key `id_rsa.pub`.
+We just need to move the public key to `.ssh` directory on ther server. Log into your account and create a directory called `.ssh`:
+```
+mkdir .ssh
+``` 
+
+Then log out, and copy the public key to the server:
+```
+scp /Users/alexa/.ssh/id_rsa.pub cs15lfa22po@ieng6.ucsd.edu:~/.ssh/authorized_keys
+```
+![image](/lab-report-1-week-1-folder/scpSSHkey.png)
+We now can log in without typying in the password.
+
+
+
+
+
+
+
+
+
+
+
