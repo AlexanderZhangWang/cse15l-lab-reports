@@ -105,7 +105,18 @@ scp /Users/alexa/.ssh/id_rsa.pub cs15lfa22po@ieng6.ucsd.edu:~/.ssh/authorized_ke
 ![image](/lab-report-1-week-1-folder/scpSSHkey.png)
 We now can log in without typying in the password.
 
+>Step 8: Optimizing remote running
 
+* We can write a command in quotes at the end of `ssh` command to run it on the remote server, and then **exit** it.
+
+* We can also use `;` to run multiple commands in a single line.
+
+This is my command that can copy `WhereAmI.java` to the remote, then run it, finally exit my account.
+```
+scp WhereAmI.java cs15lfa22po@ieng6.ucsd.edu:~/; ssh cs15lfa22po@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"
+```
+This command only use 5 keystrokes: `ctrl + c`, `ctrl + v`, then `enter`.
+After run this command once, we can use only 2 keystrokes to rerun this command: `up-arrow`, then `enter`.
 
 
 
