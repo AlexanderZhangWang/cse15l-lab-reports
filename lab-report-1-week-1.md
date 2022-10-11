@@ -20,9 +20,7 @@ After VSC installed, open your VSC, and it should look like this:
 
 >Step 3: Connect remotely to **ieng6**
 
-Install OpenSSH Client
-
-[Click here for installing OpenSSH](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui)
+For Windows users, [Click here](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui) for installing OpenSSH
 
 OpenSSH allows us to connect our computer to other computers.
 
@@ -63,8 +61,14 @@ Try run some commands in both **your computer** and the **remote computer**.
 * `cat <directory>`
 * `exit`
 
-This was what is shown when I ran `ls -lat`:
-![image](lab-report-1-week-1-folder/runSomeCommands.png)
+This was what is shown when I ran `ls`, which list all files and directories in the current working directory:
+![image](lab-report-1-week-1-folder/showCommandls.png)
+
+This was what is shown when I ran `cat`, which print the content of a file:
+![image](/lab-report-1-week-1-folder/showCommandcat.png)
+
+This was what is shown when I ran `exit`, which log us out from the remote server:
+![image](/lab-report-1-week-1-folder/showCommandexit.png)
 
 >Step 5: Moveing files using SSH
 
@@ -87,10 +91,12 @@ class WhereAmI {
 }
 ```
 
-`WhereAmI.java` runs on my own laptop looks like this:
+`WhereAmI.java` runs on my own laptop looks like this, which shows my operation system, my user name, java installation directory, and the current working directory:
 ![image](/lab-report-1-week-1-folder/WhereAmIRanOnPC.png)
-After copying the file to the remote, run it on the server:
+After copying the file to the remote, run it on the server, which shows the operation system of **ieng6**, my account name, and the home and current working directory:
 ![image](/lab-report-1-week-1-folder/scpToRemote.png)
+The availability to use a different operation system is one of the reasons that we want to use remote server.
+
 >Step 6: SSH keys
 
 Each time we log in or `scp` a file or some files to the remote computer, we had to type in the password.  
