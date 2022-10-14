@@ -7,4 +7,4 @@ Alexander Zhang
 
 > [Week 1 Lab Report](lab-report-1-week-1.html)
 
-> [Week 3 Lab Report](/lab-report-1-week-3.md)
+> [Week 3 Lab Report](/lab-report-1-week-3.html)
