@@ -3,7 +3,7 @@
 `-i` is a command option for `grep` to ignore case:
 
 ```
-[cs15lfa22po@ieng6-202]:technical:174$ grep -i biomed */*/*
+$ grep -i biomed */*/*
 ```
 
 ```
@@ -16,8 +16,10 @@ government/Gen_Account_Office/Testimony_Jul17-2002_d02957t.txt:Department Could 
 government/Gen_Account_Office/Testimony_Jul17-2002_d02957t.txt:Homeland Security: New Department Could Improve Biomedical
 ```
 
+This command ignores case and finds all the lines that contain "biomed".
+
 ```
-[cs15lfa22po@ieng6-202]:technical:176$ grep -i "government is" */*/*
+$ grep -i "government is" */*/*
 ```
 
 ```
@@ -53,8 +55,10 @@ government/Media/AP_LawSchoolDebts.txt:government is facing losses of over half 
 government/Media/GreensburgDailyNews.txt:judiciary] of the government is working for everyone. I'm so
 ```
 
+This command ignores case and finds "government is"
+
 ```
-[cs15lfa22po@ieng6-202]:technical:180$ grep -i worldwide */*/*
+$ grep -i worldwide */*/*
 ```
 
 ```
@@ -88,12 +92,15 @@ government/Gen_Account_Office/og97003.txt:requirements worldwide.
 government/Post_Rate_Comm/Mitchell_RMVancouver.txt:Worldwide to process and transport Priority Mail. The idea was for
 ```
 
+This command ignores case and searches for "worldwide".
+When we want to search all related lines, ignoring case is useful.
+
 ---
 
-There is another command `-v` to search and select non-matchin lines:
+There is another command `-v` to search and select non-matching lines:
 
 ```
-[cs15lfa22po@ieng6-202]:technical:195$ grep -v e biomed/rr74.txt
+$ grep -v e biomed/rr74.txt
 ```
 
 ```
@@ -155,8 +162,10 @@ in vitro and
 Conclusion
 ```
 
+This command searches all lines that do not have "e", including emty lines.
+
 ```
-[cs15lfa22po@ieng6-202]:technical:199$ grep -v e government/*/WolakSpeech_usps.txt
+$ grep -v e government/*/WolakSpeech_usps.txt
 ```
 
 ```
