@@ -55,7 +55,7 @@ government/Media/AP_LawSchoolDebts.txt:government is facing losses of over half 
 government/Media/GreensburgDailyNews.txt:judiciary] of the government is working for everyone. I'm so
 ```
 
-This command ignores case and finds "government is"
+This command ignores case and finds all the lines that contain "government is".
 
 ```
 $ grep -i worldwide */*/*
@@ -162,7 +162,7 @@ in vitro and
 Conclusion
 ```
 
-This command searches all lines that do not have "e", including emty lines.
+This command searches all lines in biomed/rr74.txt that do not have "e", including emty lines.
 
 ```
 $ grep -v e government/*/WolakSpeech_usps.txt
@@ -224,6 +224,50 @@ constant.
 
 ```
 
+This command searches all lines in WolakSpeech_usps.txt that do not have "e", inlcuding empty lines. 
+Searches for non-matching lines is also useful when we want to exclude something.
+
+```
+$ grep -vi e government/*/WolakSpeech_usps.txt
+```
+
+```
+
+
+
+
+
+
+1996
+
+
+consumption.
+communication
+
+
+i
+good j, Dj
+
+
+function.
+
+-1.27.
+
+
+constant.
+0.25.
+
+
+
+
+1995 and 1996?
+
+
+
+```
+
+This command searches all lines in WolakSpeech_usps.txt that do not have "e" and "E" (because of command option -i igornoring case), inlcuding empty lines.
+
 ---
 
 `-c` command option is for suppressing the output, and print the number of lines that is matched for each file.
@@ -252,6 +296,8 @@ $ grep -c have 911*/*
 911report/preface.txt:23
 ```
 
+This command counts the number of lines that contain "have" in each file in 911report.
+
 ```
 $ grep -c police 911*/*
 ```
@@ -276,6 +322,9 @@ $ grep -c police 911*/*
 911report/preface.txt:0
 ```
 
+This command counts the number of lines that contain "police" in each file in 911report.
+This is useful when we want to count something for statistic. 
+
 ```
 $ grep -cv police 911*/*
 ```
@@ -299,3 +348,5 @@ $ grep -cv police 911*/*
 911report/chapter-9.txt:1845
 911report/preface.txt:108
 ```
+
+We also can combine two command options. This command counts the number of lines that do not contain "police" in each file in 911report.
