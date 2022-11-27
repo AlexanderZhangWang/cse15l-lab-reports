@@ -45,7 +45,13 @@ fi
 
 ## Look at the example shown in the second screenshot
 
-At the 8th line of my `grade.sh`, there is the first if statement of my code. It checks if the file `ListExamples.java` exist. It is true in this situation. 
+At the 1st line of my `grade.sh`, it deletes `stundent-submission` folder and the files in it. There is no standad output or standard error.
+
+At the 2nd line, it copies the submitted files into a folder called `student-submission`.
+
+At the line 3rd, 4th, 5th, it copies the tester, junit test files into `student-submission`.
+
+At the 8th line, there is the first if statement of my code. It checks if the file `ListExamples.java` exist. It is true in this situation. 
 
 If this if statement's condition is false, it will echo "ListExamples.java not found!!! 0/2" and then exit the bash script.
 
